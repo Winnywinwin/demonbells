@@ -1,4 +1,7 @@
 <html>
+<head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
 <body>
 <script type="text/javascript">
 
@@ -14,6 +17,12 @@ const findDB = function(numDB, maxDB = 4) {
   return result;
 }
 
-console.log(findDB(5))
+var raw = findDB(5);
+raw = raw.filter(function(e){
+  return e<7;
+}
+$("#out").innerHTML = JSON.stringify(raw);
 </script>
+
+<pre id="out"></pre>
 </body>
