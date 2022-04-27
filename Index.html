@@ -1,0 +1,19 @@
+<html>
+<body>
+<script type="text/javascript">
+
+const findDB = function(numDB, maxDB = 4) {
+  if (numDB == 0) return [ [] ];
+  let result = [];
+  let thisDB = Math.min(numDB, maxDB);
+  for (let i = thisDB; i > 0; i--) {
+    findDB(numDB - i, Math.min(i, thisDB)).forEach(n => {
+      result.push([i].concat(n));
+    });
+  }
+  return result;
+}
+
+console.log(findDB(5))
+</script>
+</body>
